@@ -302,12 +302,15 @@ class DataGenerator {
 
 		// contains only the information needed for display purposes
 		$displayData = array();
+		$lastGeneratedRow = array();
 		for ($rowNum=$firstRowNum; $rowNum<=$lastRowNum; $rowNum++) {
 
 			// $template is already grouped by process order. Just loop through each one, passing off the
 			// actual data generation to the appropriate Data Type. Note that we pass all previously generated
 			// data (including any metadata returned by the Data Type).
 			$currRowData = array();
+
+			$isGroupingIntended = mt_rand(0,1);
 
 			while (list($order, $dataTypeGenerationInfo) = each($template)) {
 				foreach ($dataTypeGenerationInfo as $genInfo) {
@@ -320,9 +323,17 @@ class DataGenerator {
 					);
 
 					$genInfo["randomData"] = $currDataType->generate($this, $generationContextData);
+
 					$currRowData["$colNum"] = $genInfo;
+
+					if($isGroupingIntended==1 && $colNum < 4){
+						$currRowData["$colNum"] = $lastGeneratedRow["$colNum"];
+					}
+
+
 				}
 			}
+			$lastGeneratedRow = $currRowData;
 			reset($template);
 
 			// now sort the row columns in the desired order
