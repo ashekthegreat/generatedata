@@ -64,6 +64,24 @@
 		<div class="gdClear" style="padding-bottom: 30px"></div>
 
 		<h2>
+			DATA GROUPING
+			<span data-help-section="grouping" class="gdSectionHelp" title="Add row numbers comma separated. <br>Example: 1,5,6,8"></span>
+		</h2>
+		<div id="gdGroupingSection">
+			<table cellspacing="0" cellpadding="0" width="100%">
+				<tbody>
+					<tr>
+						<td width="8%" valign="top">Group 1</td>
+						<td width="92%" valign="top">
+							<textarea id="groupIds" name="groupIds" style="width: 99%; resize: vertical"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="gdClear" style="padding-bottom: 30px"></div>
+
+		<h2>
 			{$L.export_types|upper}
 			<span data-help-section="exportTypes" class="gdSectionHelp" title="{$L.export_types_help}"></span>
 		</h2>

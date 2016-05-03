@@ -296,6 +296,9 @@ define([
       }
 
       manager.loadDataTypeRows(data);
+
+      // load group IDs
+      $("#groupIds").val(json.groupIds);
     }
 
     // update the status line
@@ -411,7 +414,8 @@ define([
       countries: _countries,
       dataTypes: rowData,
       exportTypes: manager.serializeExportTypes(),
-      selectedExportType: _currExportType
+      selectedExportType: _currExportType,
+      groupIds: _getGroupIds()
     };
 
     if (_currConfigurationID !== null) {
@@ -1160,6 +1164,10 @@ define([
 
   var _getNumRowsToGenerate = function () {
     return $("#gdNumRowsToGenerate").val();
+  };
+
+  var _getGroupIds = function () {
+    return $("#groupIds").val();
   };
 
   var _getVisibleRowOrderByRowNum = function (rowNum) {

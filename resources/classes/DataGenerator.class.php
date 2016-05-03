@@ -20,7 +20,8 @@ class DataGenerator {
 	private $isLastBatch;
 	private $currentBatchFirstRow;
 	private $currentBatchLastRow;
-	
+	private $groupIds;
+
 	// compression flag - set as per user choice
 	private $isCompressionRequired = false;
 
@@ -84,6 +85,9 @@ class DataGenerator {
 		}
 
 		$this->numResults = $postData["gdNumRowsToGenerate"];
+
+		// group ids
+		$this->groupIds = $postData["groupIds"];
 
 		$this->applyRowsGeneratedLimit();
 
@@ -303,6 +307,7 @@ class DataGenerator {
 		// contains only the information needed for display purposes
 		$displayData = array();
 		$lastGeneratedRow = array();
+		$groupIds = array_map('intval', explode(',', $this->groupIds));
 		for ($rowNum=$firstRowNum; $rowNum<=$lastRowNum; $rowNum++) {
 
 			// $template is already grouped by process order. Just loop through each one, passing off the
@@ -326,7 +331,10 @@ class DataGenerator {
 
 					$currRowData["$colNum"] = $genInfo;
 
-					if($isGroupingIntended==1 && $colNum < 4){
+/*					if($lastGeneratedRow && $isGroupingIntended==1 && $colNum < 4 ){
+						$currRowData["$colNum"] = $lastGeneratedRow["$colNum"];
+					}*/
+					if($lastGeneratedRow && $isGroupingIntended==1 && in_array($colNum, $groupIds) ){
 						$currRowData["$colNum"] = $lastGeneratedRow["$colNum"];
 					}
 
