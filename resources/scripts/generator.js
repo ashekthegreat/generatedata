@@ -1298,7 +1298,7 @@ define([
 
     // open the dialog
     $("#gdMainDialog").dialog({
-      title: 'generate<span style="color:#48b34d">data</span>.com',
+      title: 'Fake Data',
       dialogClass: "gdMainDialog",
       width: 860,
       minHeight: 420,
