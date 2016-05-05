@@ -27,21 +27,31 @@ class DataType_PersonalNumber extends DataTypePlugin {
 		// TODO: more options? (not 10 siffers since it could generate real personal number)
 		// TODO: support several countries?
                 static::$sep = self::getPersonalNumberSeparator($generationOptions["cc_separator"]);
-		$personnr = $this->generateRandomSwedishPersonalNumber(static::$sep);
+		$personnr = $this->generateRandomPersonalNumber(static::$sep);
 
 		// pretty sodding unlikely, but just in case!
 		while (in_array($personnr, $this->generatedPersonnrs)) {
-			$personnr = $this->generateRandomSwedishPersonalNumber(static::$sep);
+			$personnr = $this->generateRandomPersonalNumber(static::$sep);
 		}
 		$this->generatedPersonnrs[] = $personnr;
 		return array(
 			"display" => $personnr
 		);
 	}
+
+	private static function generateRandomPersonalNumber($sep) {
+		$new_str = "";
+		$new_str .= sprintf("%03d", mt_rand(1, 998));
+		$new_str .= $sep;
+		$new_str .= sprintf("%02d", mt_rand(1, 98));
+		$new_str .= $sep;
+		$new_str .= sprintf("%04d", mt_rand(1, 9998));
+		return $new_str;
+	}
 	
 	// TODO: add support for separator
 	// TODO: add support for organisation numbers
-	private static function generateRandomSwedishPersonalNumber($sep) {
+	private static function generateRandomPersonalNumber1($sep) {
 		$new_str = "16";
 		$rand = 0;
 
@@ -185,8 +195,8 @@ EOF;
 
 	public function getDataTypeMetadata() {
 		// Called before separator is set, so margin should be used
-		//$len = 12 + strlen(static::$sep);
-		$len = 13;  // Shoud be enough, allow for max one char sep
+		//$len = 9 + strlen(static::$sep) * 2;
+		$len = 11;  // Should be enough, allow for 2 char sep
 		return array(
 			"SQLField" => "varchar(" . $len . ") default NULL",
 			"SQLField_Oracle" => "varchar2(" . $len . ") default NULL",
