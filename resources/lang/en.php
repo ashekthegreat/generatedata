@@ -298,3 +298,5 @@ $L["validation_no_countries"] = "Please select at least one Country.";
 // changed
 $L["plugins_intro"] = "Check/uncheck the rows to determine which functionality you'd like to see in the interface.";
 $L["notify_settings_updated"] = "Your settings have been updated. Refresh the page to ensure you have the latest content.";
+
+$L["babel"] = "Babel";
