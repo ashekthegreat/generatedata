@@ -6,7 +6,7 @@ $L["ENABLED"] = true;
 
 // Core language strings
 $L["language"] = "English";
-$L["title"] = "generatedata.com";
+$L["title"] = "Fake Data";
 $L["about"] = "About";
 $L["accounts"] = "Accounts";
 $L["back"] = "Back";
@@ -14,7 +14,7 @@ $L["add"] = "Add";
 $L["confirm_delete_form"] = "Are you sure you want to delete this form?";
 $L["confirm_empty_form"] = "Are you sure you want to clear the page?";
 $L["countries"] = "Countries";
-$L["meta_description"] = "GenerateData.com: free, GNU-licensed, random custom data generator for testing software";
+$L["meta_description"] = "Fake Data, random custom data generator for testing software";
 $L["meta_keywords"] = "Random Data, Test Data, Sample Data, data generator, generate data";
 $L["row_label"] = "Column Title";
 $L["row_label_plural"] = "Column Titles";
