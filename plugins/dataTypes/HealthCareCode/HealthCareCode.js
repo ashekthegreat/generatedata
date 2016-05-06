@@ -9,14 +9,14 @@ define([
 	"use strict";
   
 	/**
-	* @name BabelCodes
-	* @description JS code for the BabelCodes Data Type.
+	* @name HealthCareCode
+	* @description JS code for the HealthCareCode Data Type.
 	* @see DataType
 	* @namespace
 	*/
 
-	var MODULE_ID = "data-type-BabelCodes";
-	var LANG = L.dataTypePlugins.BabelCodes;
+	var MODULE_ID = "data-type-HealthCareCode";
+	var LANG = L.dataTypePlugins.HealthCareCode;
 
 	var _init = function() {
 		var subscriptions = {};

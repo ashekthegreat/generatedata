@@ -4,12 +4,12 @@
  * @package DataTypes
  */
 
-class DataType_BabelIndicator extends DataTypePlugin {
+class DataType_HealthCareIndicator extends DataTypePlugin {
 	protected $isEnabled = true;
-	protected $dataTypeName = "BabelIndicator";
-	protected $dataTypeFieldGroup = "babel";
+	protected $dataTypeName = "HealthCareIndicator";
+	protected $dataTypeFieldGroup = "health_care";
 	protected $dataTypeFieldGroupOrder = 52;
-	protected $jsModules = array("BabelIndicator.js");
+	protected $jsModules = array("HealthCareIndicator.js");
 
 
 	public function generate($generator, $generationContextData) {

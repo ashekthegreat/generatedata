@@ -4,12 +4,12 @@
  * @package DataTypes
  */
 
-class DataType_BabelCodes extends DataTypePlugin {
+class DataType_HealthCareGeneral extends DataTypePlugin {
 	protected $isEnabled = true;
-	protected $dataTypeName = "BabelCodes";
-	protected $dataTypeFieldGroup = "babel";
-	protected $dataTypeFieldGroupOrder = 51;
-	protected $jsModules = array("BabelCodes.js");
+	protected $dataTypeName = "HealthCareGeneral";
+	protected $dataTypeFieldGroup = "health_care";
+	protected $dataTypeFieldGroupOrder = 50;
+	protected $jsModules = array("HealthCareGeneral.js");
 
 
 	public function generate($generator, $generationContextData) {
@@ -72,28 +72,6 @@ class DataType_BabelCodes extends DataTypePlugin {
 		<option value="{$this->L["value_7"]}">{$this->L["label_7"]}</option>
 		<option value="{$this->L["value_8"]}">{$this->L["label_8"]}</option>
 		<option value="{$this->L["value_9"]}">{$this->L["label_9"]}</option>
-		<option value="{$this->L["value_10"]}">{$this->L["label_10"]}</option>
-		<option value="{$this->L["value_11"]}">{$this->L["label_11"]}</option>
-		<option value="{$this->L["value_12"]}">{$this->L["label_12"]}</option>
-		<option value="{$this->L["value_13"]}">{$this->L["label_13"]}</option>
-		<option value="{$this->L["value_14"]}">{$this->L["label_14"]}</option>
-		<option value="{$this->L["value_15"]}">{$this->L["label_15"]}</option>
-		<option value="{$this->L["value_16"]}">{$this->L["label_16"]}</option>
-		<option value="{$this->L["value_17"]}">{$this->L["label_17"]}</option>
-		<option value="{$this->L["value_18"]}">{$this->L["label_18"]}</option>
-		<option value="{$this->L["value_19"]}">{$this->L["label_19"]}</option>
-		<option value="{$this->L["value_20"]}">{$this->L["label_20"]}</option>
-		<option value="{$this->L["value_21"]}">{$this->L["label_21"]}</option>
-		<option value="{$this->L["value_22"]}">{$this->L["label_22"]}</option>
-		<option value="{$this->L["value_23"]}">{$this->L["label_23"]}</option>
-		<option value="{$this->L["value_24"]}">{$this->L["label_24"]}</option>
-		<option value="{$this->L["value_25"]}">{$this->L["label_25"]}</option>
-		<option value="{$this->L["value_26"]}">{$this->L["label_26"]}</option>
-		<option value="{$this->L["value_27"]}">{$this->L["label_27"]}</option>
-		<option value="{$this->L["value_28"]}">{$this->L["label_28"]}</option>
-		<option value="{$this->L["value_29"]}">{$this->L["label_29"]}</option>
-		<option value="{$this->L["value_30"]}">{$this->L["label_30"]}</option>
-		<option value="{$this->L["value_31"]}">{$this->L["label_31"]}</option>
 	</select>
 	<div>
 		&nbsp;{$this->L["separated_by_pipe"]}

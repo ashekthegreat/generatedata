@@ -9,14 +9,14 @@ define([
 	"use strict";
   
 	/**
-	* @name BabelGeneral
-	* @description JS code for the BabelGeneral Data Type.
+	* @name HealthCareGeneral
+	* @description JS code for the HealthCareGeneral Data Type.
 	* @see DataType
 	* @namespace
 	*/
 
-	var MODULE_ID = "data-type-BabelGeneral";
-	var LANG = L.dataTypePlugins.BabelGeneral;
+	var MODULE_ID = "data-type-HealthCareGeneral";
+	var LANG = L.dataTypePlugins.HealthCareGeneral;
 
 	var _init = function() {
 		var subscriptions = {};

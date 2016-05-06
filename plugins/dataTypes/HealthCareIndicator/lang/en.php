@@ -3,7 +3,7 @@
 $L = array();
 
 $L["DATA_TYPE"] = array(
-    "NAME" => "Babel Indicator",
+    "NAME" => "Health Care Indicator",
     "DESC" => "Generates one or more random values from an arbitrary list of items."
 );
 

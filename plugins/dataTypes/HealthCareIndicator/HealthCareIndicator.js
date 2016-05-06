@@ -9,14 +9,14 @@ define([
 	"use strict";
   
 	/**
-	* @name BabelIndicator
-	* @description JS code for the BabelIndicator Data Type.
+	* @name HealthCareIndicator
+	* @description JS code for the HealthCareIndicator Data Type.
 	* @see DataType
 	* @namespace
 	*/
 
-	var MODULE_ID = "data-type-BabelIndicator";
-	var LANG = L.dataTypePlugins.BabelIndicator;
+	var MODULE_ID = "data-type-HealthCareIndicator";
+	var LANG = L.dataTypePlugins.HealthCareIndicator;
 
 	var _init = function() {
 		var subscriptions = {};
