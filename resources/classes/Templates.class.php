@@ -127,7 +127,7 @@ class Templates {
 	<html>
 	<head>
 		<title>Things just ain't right.</title>
-		<link rel="stylesheet" type="text/css" href="resources/themes/classic/compiled/styles.css">
+		<link rel="stylesheet" type="text/css" href="resources/themes/classic/sass/styles.css">
 		<script src="resources/scripts/libs/jquery.min.js"></script>
 		<script>
 		$(function() {

@@ -7,7 +7,7 @@
 	<meta name="keywords" content="{$L.meta_keywords}" />
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/compiled/styles.css" />
+	<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/sass/styles.css" />
 	<link rel="stylesheet" type="text/css" href="resources/css/smoothness/jquery-ui.min.css" />
 	<script src="resources/scripts/libs/jquery.min.js"></script>
 	<script src="resources/scripts/libs/jquery-ui.min.js"></script>

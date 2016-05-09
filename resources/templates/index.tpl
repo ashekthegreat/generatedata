@@ -12,7 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="{$minifiedResourcePaths.coreCSS}" />
 		<link rel="stylesheet" type="text/css" href="resources/css/smoothness/jquery-ui.min.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/chosen/chosen.css" />
-		<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/compiled/styles.css" />
+		<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/sass/styles.css" />
 		<script src="{$minifiedResourcePaths.coreJS}"></script>
 	{else}
 
@@ -20,7 +20,7 @@
 		<link rel="stylesheet" type="text/css" href="resources/css/chosen/chosen.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/tablesorter.theme.css" />
 		<link rel="stylesheet" type="text/css" href="resources/libs/codemirror/lib/codemirror.css" />
-		<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/compiled/styles.css" />
+		<link rel="stylesheet" type="text/css" href="resources/themes/{$theme}/sass/styles.css" />
 
 		<script src="resources/libs/codemirror/lib/codemirror.min.js"></script>
 		<script src="resources/scripts/libs/jquery.min.js"></script>
