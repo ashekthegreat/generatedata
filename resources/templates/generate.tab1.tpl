@@ -42,6 +42,9 @@
 			<li class="gdColDataType">{$L.data_type}</li>
 			<li class="gdColExamples">{$L.examples}</li>
 			<li class="gdColOptions">{$L.options}</li>
+			<li class="gdColGroup">G1</li>
+			<li class="gdColGroup">G2</li>
+			<li class="gdColGroup">G3</li>
 			<li class="gdColHelp">{$L.help}</li>
 			<li class="gdColDelete"><input type="button" class="gdDeleteRowsBtn" value="{$L.del}" /></li>
 		</ul>
@@ -52,6 +55,9 @@
 			<li class="gdColDataType">{$L.data_type}</li>
 			<li class="gdColExamples">{$L.examples}</li>
 			<li class="gdColOptions">{$L.options}</li>
+			<li class="gdColGroup">G1</li>
+			<li class="gdColGroup">G2</li>
+			<li class="gdColGroup">G3</li>
 			<li class="gdColHelp">{$L.help}</li>
 			<li class="gdColDelete"><input type="button" class="gdDeleteRowsBtn" value="{$L.del}" /></li>
 		</ul>
@@ -144,6 +150,9 @@
 			<li class="gdColDataType">{data_types_dropdown}</li>
 			<li class="gdColExamples" id="gdColExamples_%ROW%"></li>
 			<li class="gdColOptions" id="gdColOptions_%ROW%"></li>
+			<li class="gdColGroup" id="gdColGroup1_%ROW%"><input type="checkbox" name="gdGroup1_%ROW%" /></li>
+			<li class="gdColGroup" id="gdColGroup2_%ROW%"><input type="checkbox" name="gdGroup2_%ROW%" /></li>
+			<li class="gdColGroup" id="gdColGroup3_%ROW%"><input type="checkbox" name="gdGroup3_%ROW%" /></li>
 			<li class="gdColHelp" id="gdColHelp_%ROW%"></li>
 			<li class="gdColDelete"><input type="checkbox" class="gdDeleteRows" name="gdDeleteRows_%ROW%" /></li>
 		</ul>

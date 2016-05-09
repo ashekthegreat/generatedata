@@ -97,6 +97,7 @@ define([
     $tableRows.on("focus", ".gdDataType", _onFocusDataType);
     $tableRows.on("change", ".gdDeleteRows", _markRowToDelete);
     $tableRows.on("change", ".gdColExamples select", _publishExampleChange);
+    $tableRows.on("change", ".gdColGroup input", _uncheckGroupingItems);
 
     $tableRows.sortable({
       handle: ".gdColOrder",
@@ -742,6 +743,10 @@ define([
       rowID: rowID,
       value: select.value
     });
+  };
+
+  var _uncheckGroupingItems = function (e) {
+    $(e.target).closest(".gdColGroup").siblings(".gdColGroup").find("input").prop('checked', false);
   };
 
   /**

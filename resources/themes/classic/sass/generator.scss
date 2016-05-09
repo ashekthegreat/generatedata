@@ -106,6 +106,10 @@ body #gdTableRows li.gdDeletedRow {
 .gdColOptions {
 	width: 274px;
 }
+.gdColGroup {
+	width: 29px;
+	text-align: center;
+}
 .gdColHelp {
 	width: 38px;
 	text-align: center;
@@ -306,7 +310,7 @@ li.gdColDelete {
 	border: 1px solid #cccccc; 
 	border-right: 0px;
 	padding: 6px; 
-	width: 730px;
+	width: 820px;
 	color: #555555;
 	float: left;
 	height: 22px;
