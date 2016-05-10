@@ -290,6 +290,8 @@ define([
         var currRowID = orderedRowIDs[i];
         $("#gdTitle_" + currRowID).val(currDataType.title);
         $("#gdDataType_" + currRowID).val(currDataType.dataType);
+        $('#gdGroup_'+ currRowID +'[value="'+ currDataType.groupLevel +'"]').prop("checked", true);
+
         _publishDataTypeChange($("#gdDataType_" + currRowID)[0]);
 
         currDataType.rowID = currRowID;
@@ -297,9 +299,6 @@ define([
       }
 
       manager.loadDataTypeRows(data);
-
-      // load group IDs
-      $("#groupIds").val(json.groupIds);
     }
 
     // update the status line
@@ -396,6 +395,7 @@ define([
     for (var i = 0; i < orderedRowIDs.length; i++) {
       var rowNum = orderedRowIDs[i];
       var rowDataType = $("#gdDataType_" + rowNum).val();
+      var rowGroupLevel = $("#gdGroup_" + rowNum + ":checked").val();
       if (rowDataType === "") {
         continue;
       }
@@ -403,7 +403,8 @@ define([
       rowData.push({
         title: $("#gdTitle_" + rowNum).val(),
         dataType: rowDataType,
-        data: manager.serializeDataTypeRow(rowDataType, rowNum)
+        data: manager.serializeDataTypeRow(rowDataType, rowNum),
+        groupLevel: rowGroupLevel
       });
     }
 
@@ -415,8 +416,7 @@ define([
       countries: _countries,
       dataTypes: rowData,
       exportTypes: manager.serializeExportTypes(),
-      selectedExportType: _currExportType,
-      groupIds: _getGroupIds()
+      selectedExportType: _currExportType
     };
 
     if (_currConfigurationID !== null) {
@@ -1169,10 +1169,6 @@ define([
 
   var _getNumRowsToGenerate = function () {
     return $("#gdNumRowsToGenerate").val();
-  };
-
-  var _getGroupIds = function () {
-    return $("#groupIds").val();
   };
 
   var _getVisibleRowOrderByRowNum = function (rowNum) {

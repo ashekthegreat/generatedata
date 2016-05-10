@@ -20,7 +20,6 @@ class DataGenerator {
 	private $isLastBatch;
 	private $currentBatchFirstRow;
 	private $currentBatchLastRow;
-	private $groupIds;
 
 	// compression flag - set as per user choice
 	private $isCompressionRequired = false;
@@ -85,9 +84,6 @@ class DataGenerator {
 		}
 
 		$this->numResults = $postData["gdNumRowsToGenerate"];
-
-		// group ids
-		$this->groupIds = $postData["groupIds"];
 
 		$this->applyRowsGeneratedLimit();
 
@@ -204,6 +200,7 @@ class DataGenerator {
 		foreach ($rowNums as $i) {
 			$title    = $hash["gdTitle_$i"];
 			$dataType = $hash["gdDataType_$i"];
+			$groupLevel = $hash["gdGroup_$i"];
 
 			// if there's no data type, the row wasn't filled in so we just ignore it
 			if (empty($dataType)) {
@@ -227,7 +224,8 @@ class DataGenerator {
 				    "colNum"            => $order,
 					"dataTypeFolder"    => $dataTypeFolder,
 					"generationOptions" => $options,
-					"columnMetadata"    => $currDataType->getDataTypeMetaData()
+					"columnMetadata"    => $currDataType->getDataTypeMetaData(),
+					"groupLevel"		=> $groupLevel
 				);
 			}
 
@@ -307,7 +305,7 @@ class DataGenerator {
 		// contains only the information needed for display purposes
 		$displayData = array();
 		$lastGeneratedRow = array();
-		$groupIds = array_map('intval', explode(',', $this->groupIds));
+
 		for ($rowNum=$firstRowNum; $rowNum<=$lastRowNum; $rowNum++) {
 
 			// $template is already grouped by process order. Just loop through each one, passing off the
@@ -315,30 +313,28 @@ class DataGenerator {
 			// data (including any metadata returned by the Data Type).
 			$currRowData = array();
 
-			$isGroupingIntended = mt_rand(0,1);
+			$isGroupingIntended = mt_rand(1,100);
+			//$groupLevel = $this->postData["gdGroup1_1"]
 
 			while (list($order, $dataTypeGenerationInfo) = each($template)) {
 				foreach ($dataTypeGenerationInfo as $genInfo) {
 					$colNum = $genInfo["colNum"];
-					$currDataType = $dataTypes[$genInfo["dataTypeFolder"]];
-					$generationContextData = array(
-						"rowNum"            => $rowNum,
-						"generationOptions" => $genInfo["generationOptions"],
-						"existingRowData"   => $currRowData
-					);
+					$groupLevel = $genInfo["groupLevel"];
 
-					$genInfo["randomData"] = $currDataType->generate($this, $generationContextData);
-
-					$currRowData["$colNum"] = $genInfo;
-
-/*					if($lastGeneratedRow && $isGroupingIntended==1 && $colNum < 4 ){
+					if($lastGeneratedRow && $groupLevel && $isGroupingIntended < $groupLevel ){
 						$currRowData["$colNum"] = $lastGeneratedRow["$colNum"];
-					}*/
-					if($lastGeneratedRow && $isGroupingIntended==1 && in_array($colNum, $groupIds) ){
-						$currRowData["$colNum"] = $lastGeneratedRow["$colNum"];
+					} else{
+						$currDataType = $dataTypes[$genInfo["dataTypeFolder"]];
+						$generationContextData = array(
+							"rowNum"            => $rowNum,
+							"generationOptions" => $genInfo["generationOptions"],
+							"existingRowData"   => $currRowData
+						);
+
+						$genInfo["randomData"] = $currDataType->generate($this, $generationContextData);
+
+						$currRowData["$colNum"] = $genInfo;
 					}
-
-
 				}
 			}
 			$lastGeneratedRow = $currRowData;

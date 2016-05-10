@@ -42,9 +42,9 @@
 			<li class="gdColDataType">{$L.data_type}</li>
 			<li class="gdColExamples">{$L.examples}</li>
 			<li class="gdColOptions">{$L.options}</li>
-			<li class="gdColGroup">G1</li>
-			<li class="gdColGroup">G2</li>
-			<li class="gdColGroup">G3</li>
+			<li class="gdColGroup">70%</li>
+			<li class="gdColGroup">40%</li>
+			<li class="gdColGroup">20%</li>
 			<li class="gdColHelp">{$L.help}</li>
 			<li class="gdColDelete"><input type="button" class="gdDeleteRowsBtn" value="{$L.del}" /></li>
 		</ul>
@@ -55,9 +55,9 @@
 			<li class="gdColDataType">{$L.data_type}</li>
 			<li class="gdColExamples">{$L.examples}</li>
 			<li class="gdColOptions">{$L.options}</li>
-			<li class="gdColGroup">G1</li>
-			<li class="gdColGroup">G2</li>
-			<li class="gdColGroup">G3</li>
+			<li class="gdColGroup">70%</li>
+			<li class="gdColGroup">40%</li>
+			<li class="gdColGroup">20%</li>
 			<li class="gdColHelp">{$L.help}</li>
 			<li class="gdColDelete"><input type="button" class="gdDeleteRowsBtn" value="{$L.del}" /></li>
 		</ul>
@@ -66,24 +66,6 @@
 		<div id="gdAddDataSetRowsSection">
 			{$L.add} <input type="text" name="gdNumRowsToAdd" id="gdNumRowsToAdd" value="1" size="2" />
 			<input type="button" value="{$L.row_sp}" class="gdAddRowsBtn" />
-		</div>
-		<div class="gdClear" style="padding-bottom: 30px"></div>
-
-		<h2>
-			DATA GROUPING
-			<span data-help-section="grouping" class="gdSectionHelp" title="Add row numbers comma separated. <br>Example: 1,5,6,8"></span>
-		</h2>
-		<div id="gdGroupingSection">
-			<table cellspacing="0" cellpadding="0" width="100%">
-				<tbody>
-					<tr>
-						<td width="8%" valign="top">Group 1</td>
-						<td width="92%" valign="top">
-							<textarea id="groupIds" name="groupIds" style="width: 99%; resize: vertical"></textarea>
-						</td>
-					</tr>
-				</tbody>
-			</table>
 		</div>
 		<div class="gdClear" style="padding-bottom: 30px"></div>
 
@@ -150,9 +132,9 @@
 			<li class="gdColDataType">{data_types_dropdown}</li>
 			<li class="gdColExamples" id="gdColExamples_%ROW%"></li>
 			<li class="gdColOptions" id="gdColOptions_%ROW%"></li>
-			<li class="gdColGroup" id="gdColGroup1_%ROW%"><input type="checkbox" name="gdGroup1_%ROW%" /></li>
-			<li class="gdColGroup" id="gdColGroup2_%ROW%"><input type="checkbox" name="gdGroup2_%ROW%" /></li>
-			<li class="gdColGroup" id="gdColGroup3_%ROW%"><input type="checkbox" name="gdGroup3_%ROW%" /></li>
+			<li class="gdColGroup" id="gdColGroup1_%ROW%"><input type="checkbox" name="gdGroup_%ROW%" id="gdGroup_%ROW%" value="70" /></li>
+			<li class="gdColGroup" id="gdColGroup2_%ROW%"><input type="checkbox" name="gdGroup_%ROW%" id="gdGroup_%ROW%" value="40" /></li>
+			<li class="gdColGroup" id="gdColGroup3_%ROW%"><input type="checkbox" name="gdGroup_%ROW%" id="gdGroup_%ROW%" value="20" /></li>
 			<li class="gdColHelp" id="gdColHelp_%ROW%"></li>
 			<li class="gdColDelete"><input type="checkbox" class="gdDeleteRows" name="gdDeleteRows_%ROW%" /></li>
 		</ul>
